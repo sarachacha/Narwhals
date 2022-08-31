@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     [SerializeField]
     SpriteRenderer spriteRenderer;
+    Rigidbody2D rb;
 
     // Controls shit
     [Header("Controls")]
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     // Speed shit
     [Header("Stick Movement Variables")]
     Vector3 velocity;
+    public float minHorizontalSpeed = 0.5f;
     public float maxHorizontalSpeed = 20f;
     public float terminalVelocity = 50f;
 
@@ -42,9 +44,6 @@ public class PlayerController : MonoBehaviour
     bool jump = false;
     public float jumpForce = 2f;
 
-    float groundHeight = 0f;
-    float jumpTime = 0f;
-
     public float upGravity = 10f;
     public float downGravity = 20f;
 
@@ -56,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        //rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
         // If no Animator is supplied, try to find one
         if(animator == null)
@@ -70,9 +69,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckIfOnGround();
+        
 
-        Jump();
+        CheckIfOnGround();
 
         Movement(horizontalInput, verticalInput);
 
@@ -85,8 +84,16 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(10f, transform.position.y);
         }
 
-
-        transform.position += velocity * Time.deltaTime;
+        if (Mathf.Abs(velocity.x) > minHorizontalSpeed)
+        {
+            //transform.position += new Vector3(velocity.x, 0) * Time.deltaTime;
+            rb.velocity = new Vector3(velocity.x, velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector3(0, velocity.y);
+        }
+        //transform.position += new Vector3(0, velocity.y) * Time.deltaTime;
 
         // Don't do animating is there is nothing to animate
         if (spriteRenderer && animator)
@@ -132,18 +139,14 @@ public class PlayerController : MonoBehaviour
                 velocity.x = newXVel;// = new Vector2(newXVel, velocity.y);
             }
         }
-    }
 
-    // Updates Velocity with jumping
-    private void Jump()
-    {
         if (grounded)
         {
-            groundHeight = transform.position.y;
-            jumpTime = -1;
-            velocity.y = 0;
+            //groundHeight = transform.position.y;
+            //jumpTime = -1;
+            //velocity.y = 0;
         }
-        else if(velocity.y > 0)
+        else if (velocity.y > 0)
         {
             velocity += Vector3.down * upGravity * Time.deltaTime;
         }
@@ -151,25 +154,26 @@ public class PlayerController : MonoBehaviour
         {
             velocity += Vector3.down * downGravity * Time.deltaTime;
         }
+    }
 
-        if (grounded && jump && velocity.y < 0.01f)
-        {
-            velocity.y = jumpForce;
-        }
-
-        //velocity += Vector3.down * upGravity * Time.deltaTime;
+    // Updates Velocity with jumping
+    private void Jump()
+    {
+        velocity.y += jumpForce;
     }
 
     // Updates animations
     private void SpriteAnimation()
     {
-        if(Mathf.Abs(horizontalInput) > deadZone)
+        if(Mathf.Abs(velocity.x) > minHorizontalSpeed)
         {
             animator.SetBool("Running", true);
+            animator.speed = Mathf.Abs(velocity.x) / maxHorizontalSpeed * 2;
         }
         else
         {
             animator.SetBool("Running", false);
+            animator.speed = 2;
         }
 
         if(velocity.x > deadZone)
@@ -180,6 +184,8 @@ public class PlayerController : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+        
+        
     }
 
     public void MoveInput(InputAction.CallbackContext context)
@@ -193,6 +199,17 @@ public class PlayerController : MonoBehaviour
     public void JumpInput(InputAction.CallbackContext context)
     {
         //rb.AddForce(Vector2.up * jumpForce);
-        jump = context.performed;
+        //jump = context.performed;
+        Jump();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        print(collision.relativeVelocity.magnitude);
+        if (collision.relativeVelocity.magnitude > 0.5f)
+        {
+            
+            velocity = rb.velocity;
+        }
     }
 }
