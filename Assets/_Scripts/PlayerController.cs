@@ -144,7 +144,10 @@ public class PlayerController : MonoBehaviour
         {
             //groundHeight = transform.position.y;
             //jumpTime = -1;
-            //velocity.y = 0;
+            if (velocity.y < -0.01f)
+            {
+                velocity.y = 0;
+            }
         }
         else if (velocity.y > 0)
         {
@@ -205,11 +208,36 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print(collision.relativeVelocity.magnitude);
-        if (collision.relativeVelocity.magnitude > 0.5f)
+        if(velocity.x < 0)
         {
-            
-            velocity = rb.velocity;
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position, new Vector2(1.5f, 1.5f), 0f, Vector2.left, 0.07f, CheckForGroundLayer);
+
+            if (hit.collider != null)
+            {
+                velocity.x = -velocity.x;
+            }
+        }
+        else if(velocity.x > 0)
+        {
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position, new Vector2(1.5f, 1.5f), 0f, Vector2.right, 0.07f, CheckForGroundLayer);
+
+            if(hit.collider != null)
+            {
+                velocity.x = -velocity.x;
+            }
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (velocity.y > 0)
+        {
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position, new Vector2(1.5f, 1.5f), 0f, Vector2.up, 0.07f, CheckForGroundLayer);
+
+            if (hit.collider != null)
+            {
+                velocity.y = 0;
+            }
         }
     }
 }
