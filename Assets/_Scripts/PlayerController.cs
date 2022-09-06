@@ -75,12 +75,13 @@ public class PlayerController : MonoBehaviour
 
         if (Mathf.Abs(velocity.x) > minHorizontalSpeed)
         {
-            //transform.position += new Vector3(velocity.x, 0) * Time.deltaTime;
-            rb.velocity = new Vector3(velocity.x, velocity.y);
+            transform.position += new Vector3(velocity.x, velocity.y) * Time.deltaTime;
+            //rb.velocity = new Vector3(velocity.x, velocity.y);
         }
         else
         {
-            rb.velocity = new Vector3(0, velocity.y);
+            transform.position += new Vector3(0, velocity.y) * Time.deltaTime;
+            //rb.velocity = new Vector3(0, velocity.y);
         }
         //transform.position += new Vector3(0, velocity.y) * Time.deltaTime;
 
