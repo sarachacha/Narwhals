@@ -53,8 +53,8 @@ public class CollectableSpawner : MonoBehaviour
         int index = isRandomized ? Random.Range(0, collectablesToSpawn.Count) : 0;
         if(collectablesToSpawn.Count > 0)
         {
-            GameObject clone = Instantiate(collectablesToSpawn[index], transform.position, transform.rotation);
-            Destroy(clone, timeToDespawn);
+            GameObject clone = Instantiate(collectablesToSpawn[index], transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
+            //Destroy(clone, timeToDespawn);
         }
     }
 }
