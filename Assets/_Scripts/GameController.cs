@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController instance;
+
     [SerializeField]
     GameObject Player;
 
-   GameObject[] RespawnPoints;
+    GameObject[] RespawnPoints;
+
+    public TextMeshProUGUI scoreText;
 
     public int totalPoints;
     public int multiplier = 1;
 
     public int lives = 3;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +48,9 @@ public class GameController : MonoBehaviour
     public void GetPoints(int points)
     {
         totalPoints += points * multiplier;
+
+        if(scoreText != null)
+            scoreText.text = "POINTS: " + totalPoints.ToString();
     }
 
     public void IncreaseMultiplier()

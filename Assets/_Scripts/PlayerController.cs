@@ -5,9 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    GameController GC;
-
     [Header("Component References")]
 
     [SerializeField]
@@ -58,11 +55,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if(GC == null)
-        {
-            GC = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        }
-
         rb = GetComponent<Rigidbody2D>();
 
         // If no Animator is supplied, try to find one
@@ -187,7 +179,7 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         StopMoving();
-        GC.PlayerDie();
+        GameController.instance.PlayerDie();
     }
 
     public void MoveInput(InputAction.CallbackContext context)
@@ -239,8 +231,8 @@ public class PlayerController : MonoBehaviour
             GivesPoints tempComponentHolder = hit.collider.gameObject.GetComponent<GivesPoints>();
             if(tempComponentHolder != null)
             {
-                GC.GetPoints(tempComponentHolder.pointValue);
-                GC.IncreaseMultiplier();
+                GameController.instance.GetPoints(tempComponentHolder.pointValue);
+                GameController.instance.IncreaseMultiplier();
 
                 GameObject.Destroy(tempComponentHolder.gameObject);
             }
