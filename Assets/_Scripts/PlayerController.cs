@@ -184,6 +184,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Die()
+    {
+        StopMoving();
+        GC.PlayerDie();
+    }
+
     public void MoveInput(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
@@ -199,12 +205,10 @@ public class PlayerController : MonoBehaviour
         Jump();
     }
 
-    private void Die()
+    public void StopMoving()
     {
-        GC.PlayerDie();
+        velocity = new Vector3(0, 0, 0);
     }
-
-
 
 
     //**********************************************************************************

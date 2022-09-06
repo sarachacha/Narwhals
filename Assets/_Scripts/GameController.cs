@@ -54,6 +54,8 @@ public class GameController : MonoBehaviour
     {
         Player.SetActive(false);
 
+        ResetMultiplier();
+
         PlayerRespawn();
     }
 
