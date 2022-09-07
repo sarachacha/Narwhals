@@ -10,7 +10,7 @@ public class PointDropOff : MonoBehaviour
         {
             GameController.instance.BankPoints();
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

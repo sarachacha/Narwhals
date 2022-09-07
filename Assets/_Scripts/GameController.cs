@@ -11,13 +11,18 @@ public class GameController : MonoBehaviour
     [SerializeField]
     GameObject Player;
 
+    [SerializeField]
     GameObject[] RespawnPoints;
+
+    GameObject activeDiver;
+    [SerializeField]
+    GameObject[] Divers;
 
     public TextMeshProUGUI scoreText;
 
     public int totalPoints;
     public int storedPoints;
-    public int multiplier = 1;
+    public int multiplier = 0;
 
     public int lives = 3;
 
@@ -34,15 +39,32 @@ public class GameController : MonoBehaviour
             Player = GameObject.FindGameObjectWithTag("Player");
         }
 
-        if(RespawnPoints == null)
+        if(RespawnPoints.Length == 0)
         {
             RespawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
+        }
+
+        if (Divers.Length == 0)
+        {
+            Divers = GameObject.FindGameObjectsWithTag("Diver");
+
+            for(int i = 0; i < Divers.Length; i++)
+            {
+                Divers[i].SetActive(false);
+            }
         }
     }
 
     public void GetPoints(int points)
     {
         storedPoints += points;
+
+        if (activeDiver == null && Divers != null && Divers.Length > 0)
+        {
+            activeDiver = Divers[Random.Range(0, Divers.Length)];
+
+            activeDiver.SetActive(true);
+        }
     }
 
     public void BankPoints()
@@ -63,11 +85,18 @@ public class GameController : MonoBehaviour
     public void ResetStoredPoints()
     {
         storedPoints = 0;
+
+        if(activeDiver != null)
+        {
+            activeDiver.SetActive(false);
+
+            activeDiver = null;
+        }
     }
 
     public void ResetMultiplier()
     {
-        multiplier = 1;
+        multiplier = 0;
     }
 
 

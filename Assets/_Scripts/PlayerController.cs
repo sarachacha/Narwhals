@@ -235,6 +235,8 @@ public class PlayerController : MonoBehaviour
                 GameController.instance.GetPoints(tempComponentHolder.pointValue);
                 GameController.instance.IncreaseMultiplier();
 
+                //print(tempComponentHolder.gameObject.name);
+
                 GameObject.Destroy(tempComponentHolder.gameObject);
             }
         }
