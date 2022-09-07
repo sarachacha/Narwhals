@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI scoreText;
 
     public int totalPoints;
+    public int storedPoints;
     public int multiplier = 1;
 
     public int lives = 3;
@@ -39,17 +40,18 @@ public class GameController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void GetPoints(int points)
     {
-        totalPoints += points * multiplier;
+        storedPoints += points;
+    }
 
-        if(scoreText != null)
+    public void BankPoints()
+    {
+        totalPoints += storedPoints * multiplier;
+
+        ResetStoredPoints();
+
+        if (scoreText != null)
             scoreText.text = "POINTS: " + totalPoints.ToString();
     }
 
@@ -57,7 +59,12 @@ public class GameController : MonoBehaviour
     {
         multiplier += 1;
     }
-    
+
+    public void ResetStoredPoints()
+    {
+        storedPoints = 0;
+    }
+
     public void ResetMultiplier()
     {
         multiplier = 1;
@@ -69,6 +76,8 @@ public class GameController : MonoBehaviour
         Player.SetActive(false);
 
         ResetMultiplier();
+
+        ResetStoredPoints();
 
         PlayerRespawn();
     }
