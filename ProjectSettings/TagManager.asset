@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - 2DPlayer
+  - Trash
+  - SpawnPoint
+  - Diver
   layers:
   - Default
   - TransparentFX
@@ -14,7 +17,7 @@ TagManager:
   - UI
   - CheckForGroundRaycast
   - Wall
-  - 
+  - Player
   - 
   - 
   - 

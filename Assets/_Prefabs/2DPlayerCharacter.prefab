@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 5448577971590928880}
   - component: {fileID: 5448577971590928882}
   - component: {fileID: 5448577971590928883}
+  - component: {fileID: 5437999537543624458}
   - component: {fileID: 5448577971590928885}
   - component: {fileID: 5448577971590928887}
   - component: {fileID: 5448577971590928884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 2DPlayerCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,22 +112,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f95fa0f440bd09499bcbb2c398a0a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GC: {fileID: 0}
   animator: {fileID: 5448577972405022125}
   spriteRenderer: {fileID: 5448577972405022124}
-  CheckForGroundLayer:
+  IgnorePlayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
+  grounded: 0
   deadZone: 0.05
   minHorizontalSpeed: 0.5
   maxHorizontalSpeed: 12
   terminalVelocity: 50
-  maxGroundHorizontalAcceleration: 100
-  maxAerialHorizontalDeceleration: 30
-  maxAerialHorizontalAcceleration: 30
+  maxGroundHorizontalAcceleration: 20
+  maxAerialHorizontalDeceleration: 0
+  maxAerialHorizontalAcceleration: 5
   smoothTime: 0.01
   jumpForce: 8
   upGravity: 10
   downGravity: 20
+--- !u!114 &5437999537543624458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5448577971590928881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0193c28d00b5a649853c4e2c62097a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenBounds: 12
 --- !u!58 &5448577971590928885
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -201,7 +217,7 @@ GameObject:
   - component: {fileID: 5448577972405022127}
   - component: {fileID: 5448577972405022124}
   - component: {fileID: 5448577972405022125}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Swoop
   m_TagString: 2DPlayer
   m_Icon: {fileID: 0}
