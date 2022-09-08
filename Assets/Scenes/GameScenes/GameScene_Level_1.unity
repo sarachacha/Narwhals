@@ -3521,6 +3521,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diver
       objectReference: {fileID: 0}
+    - target: {fileID: 2850161350774286114, guid: 6edf3b7b00f04154ab8c29a43735b430, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7ec259282f910a2429b0dc09412a2f10, type: 3}
     - target: {fileID: 2850161350774286115, guid: 6edf3b7b00f04154ab8c29a43735b430, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4807,7 +4811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5448577971590928880, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.21
+      value: 3.85
       objectReference: {fileID: 0}
     - target: {fileID: 5448577971590928880, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4845,69 +4849,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2DPlayerCharacter
       objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928881, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: m_TagString
-      value: Player
+    - target: {fileID: 5448577971590928887, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7
       objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928882, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928882, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928882, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928882, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: SwoopController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: GC
-      value: 
-      objectReference: {fileID: 66157888}
-    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: jumpForce
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: upGravity
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: downGravity
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: maxHorizontalSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: IgnorePlayer.m_Bits
-      value: 137
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: maxAerialHorizontalAcceleration
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: maxAerialHorizontalDeceleration
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: maxGroundHorizontalAcceleration
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577972405022127, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5448577972405022127, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
+    - target: {fileID: 5448577971590928887, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}

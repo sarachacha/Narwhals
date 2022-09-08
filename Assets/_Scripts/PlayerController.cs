@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
     // Updates if swoop is on the ground
     private void CheckIfOnGround()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position + (Vector3.down*0.05f), new Vector2(1.6f, 1.6f), 0f, Vector2.down, 0.01f, IgnorePlayer);
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position + (Vector3.down*0.05f), new Vector2(1.7f, 0.8f), 0f, Vector2.down, 0.01f, IgnorePlayer);
 
         if (hit.collider == null)
         {
@@ -169,11 +169,11 @@ public class PlayerController : MonoBehaviour
 
         if (grounded ? velocity.x > deadZone : horizontalInput > deadZone)
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
         }
         else if (grounded ? velocity.x < -deadZone : horizontalInput < -deadZone)
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
         }
     }
 
@@ -215,11 +215,11 @@ public class PlayerController : MonoBehaviour
         // See if player bumped something horizontally
         if (spriteRenderer != null ? spriteRenderer.flipX : velocity.x < 0)
         {
-            hit = Physics2D.BoxCast(transform.position, new Vector2(1.45f, 1.45f), 0f, Vector2.left, 0.1f, IgnorePlayer);
+            hit = Physics2D.BoxCast(transform.position, new Vector2(1f, 0.75f), 0f, Vector2.left, 0.4f, IgnorePlayer);
         }
         else
         {
-            hit = Physics2D.BoxCast(transform.position, new Vector2(1.45f, 1.45f), 0f, Vector2.right, 0.1f, IgnorePlayer);
+            hit = Physics2D.BoxCast(transform.position, new Vector2(1f, 0.75f), 0f, Vector2.right, 0.4f, IgnorePlayer);
         }
 
         if(hit.collider != null)
@@ -254,7 +254,7 @@ public class PlayerController : MonoBehaviour
     {
         if (velocity.y > 0)
         {
-            RaycastHit2D hit = Physics2D.BoxCast(transform.position, new Vector2(1.5f, 1.5f), 0f, Vector2.up, 0.07f, IgnorePlayer);
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position, new Vector2(1.6f, 0.7f), 0f, Vector2.up, 0.07f, IgnorePlayer);
 
             if (hit.collider != null)
             {
