@@ -4849,6 +4849,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2DPlayerCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
+      propertyPath: jumpForce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
+      propertyPath: upGravity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
+      propertyPath: downGravity
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448577971590928883, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
+      propertyPath: IgnorePlayer.m_Bits
+      value: 137
+      objectReference: {fileID: 0}
     - target: {fileID: 5448577971590928887, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
       propertyPath: m_Size.x
       value: 1.7
@@ -4856,6 +4872,10 @@ PrefabInstance:
     - target: {fileID: 5448577971590928887, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
       propertyPath: m_Size.y
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448577972405022127, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f1238d12749d7f4fa27298df9b60696, type: 3}

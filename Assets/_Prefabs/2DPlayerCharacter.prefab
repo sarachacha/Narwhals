@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5448577971590928884}
   m_Layer: 8
   m_Name: 2DPlayerCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5448577972405022124}
   IgnorePlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 137
+  Ground:
+    serializedVersion: 2
+    m_Bits: 8
   grounded: 0
   deadZone: 0.05
   minHorizontalSpeed: 0.5

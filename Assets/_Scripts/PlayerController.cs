@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     // Controls shit
     [Header("Controls")]
     public LayerMask IgnorePlayer;
+    public LayerMask Ground;
     public bool grounded = false;
 
     float horizontalInput = 0f;
@@ -42,10 +43,10 @@ public class PlayerController : MonoBehaviour
     // Jump shit
     [Header("Jump Variables")]
     //bool jump = false;
-    public float jumpForce = 2f;
+    public float jumpForce = 1f;
 
-    public float upGravity = 10f;
-    public float downGravity = 20f;
+    public float upGravity = 5f;
+    public float downGravity = 8f;
 
 
     private void Awake()
@@ -96,7 +97,7 @@ public class PlayerController : MonoBehaviour
     // Updates if swoop is on the ground
     private void CheckIfOnGround()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position + (Vector3.down*0.05f), new Vector2(1.7f, 0.8f), 0f, Vector2.down, 0.01f, IgnorePlayer);
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position + (Vector3.down*0.01f), new Vector2(1.7f, 0.8f), 0f, Vector2.down, 0.05f, Ground);
 
         if (hit.collider == null)
         {
@@ -158,13 +159,13 @@ public class PlayerController : MonoBehaviour
     {
         if(Mathf.Abs(velocity.x) > minHorizontalSpeed)
         {
-            animator.SetBool("Running", true);
+            //animator.SetBool("Running", true);
             animator.speed = Mathf.Abs(velocity.x) / maxHorizontalSpeed * 2;
         }
         else
         {
-            animator.SetBool("Running", false);
-            animator.speed = 2;
+            //animator.SetBool("Running", false);
+            //animator.speed = 2;
         }
 
         if (grounded ? velocity.x > deadZone : horizontalInput > deadZone)
@@ -213,13 +214,13 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hit;
 
         // See if player bumped something horizontally
-        if (spriteRenderer != null ? spriteRenderer.flipX : velocity.x < 0)
+        if (spriteRenderer != null ? !spriteRenderer.flipX : velocity.x < 0)
         {
-            hit = Physics2D.BoxCast(transform.position, new Vector2(1f, 0.75f), 0f, Vector2.left, 0.4f, IgnorePlayer);
+            hit = Physics2D.BoxCast(transform.position + (Vector3.left * 0.3f), new Vector2(1f, 0.75f), 0f, Vector2.left, 0.4f, IgnorePlayer);
         }
         else
         {
-            hit = Physics2D.BoxCast(transform.position, new Vector2(1f, 0.75f), 0f, Vector2.right, 0.4f, IgnorePlayer);
+            hit = Physics2D.BoxCast(transform.position + (Vector3.right * 0.3f), new Vector2(1f, 0.75f), 0f, Vector2.right, 0.4f, IgnorePlayer);
         }
 
         if(hit.collider != null)
@@ -254,7 +255,7 @@ public class PlayerController : MonoBehaviour
     {
         if (velocity.y > 0)
         {
-            RaycastHit2D hit = Physics2D.BoxCast(transform.position, new Vector2(1.6f, 0.7f), 0f, Vector2.up, 0.07f, IgnorePlayer);
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position, new Vector2(1.6f, 0.7f), 0f, Vector2.up, 0.07f, Ground);
 
             if (hit.collider != null)
             {
