@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{b2a45760-7193-41fc-a175-44d462a08c33}">
 		<property name="name">
 			<value>Player_Attack</value>
@@ -128,7 +128,7 @@
 	<object class="MixerBusPanner" id="{3a63f765-526f-4b2f-8c00-a786deaeffbc}" />
 	<object class="MultiSound" id="{4d8707c0-97c7-4028-989c-c9da3b581cda}">
 		<property name="volume">
-			<value>-5</value>
+			<value>-8.5</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>
@@ -144,6 +144,9 @@
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{b232610b-a76b-47f7-8a69-f6b1079d1331}">
+		<property name="volume">
+			<value>-2.5</value>
+		</property>
 		<property name="playlistMode">
 			<value>1</value>
 		</property>
@@ -159,7 +162,7 @@
 	</object>
 	<object class="MultiSound" id="{b1fd427c-a104-4d6f-b31e-dda95ff29694}">
 		<property name="volume">
-			<value>-11</value>
+			<value>-15.5</value>
 		</property>
 		<property name="pitch">
 			<value>-3.20000005</value>

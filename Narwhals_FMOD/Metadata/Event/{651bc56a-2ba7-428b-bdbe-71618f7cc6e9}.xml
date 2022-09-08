@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{651bc56a-2ba7-428b-bdbe-71618f7cc6e9}">
 		<property name="name">
 			<value>Player_Respawn</value>

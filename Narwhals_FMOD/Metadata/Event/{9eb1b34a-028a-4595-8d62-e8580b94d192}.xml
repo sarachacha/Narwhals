@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{9eb1b34a-028a-4595-8d62-e8580b94d192}">
 		<property name="name">
 			<value>Diver_Exit</value>

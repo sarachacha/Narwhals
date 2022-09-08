@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f95fa0f440bd09499bcbb2c398a0a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GC: {fileID: 0}
   animator: {fileID: 5448577972405022125}
   spriteRenderer: {fileID: 5448577972405022124}
   IgnorePlayer:

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2850161350774286114}
   - component: {fileID: 2850161350774286113}
   - component: {fileID: 2850161350774286124}
+  - component: {fileID: 6526093540484429435}
   m_Layer: 0
   m_Name: Diver
   m_TagString: Diver
@@ -124,3 +125,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef426838778b874baaab5fd5b84c3a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6526093540484429435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2850161350774286112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 40829033
+      Data2: 1090737927
+      Data3: -646730087
+      Data4: -645987426
+    Path: event:/Player/Player_Deliver
+  Event: 
+  PlayEvent: 9
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
