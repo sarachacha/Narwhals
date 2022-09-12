@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -48,6 +49,8 @@ public class PlayerController : MonoBehaviour
     public float upGravity = 5f;
     public float downGravity = 8f;
 
+    [Header("UI")]
+    public GameObject scoreText;
 
     private void Awake()
     {
@@ -239,6 +242,14 @@ public class PlayerController : MonoBehaviour
                 //print(tempComponentHolder.gameObject.name);
 
                 GameObject.Destroy(tempComponentHolder.gameObject);
+
+                // Spawns the score text when you collect the trash
+                GameObject cloneText = Instantiate(scoreText);
+                cloneText.transform.position = tempComponentHolder.transform.position + new Vector3(0, 0.9f, 0);
+                TextMeshPro theText = cloneText.transform.GetComponent<TextMeshPro>();
+                theText.text = tempComponentHolder.pointValue.ToString();
+                GameObject.Destroy(cloneText, 0.3f);
+
             }
         }
         else

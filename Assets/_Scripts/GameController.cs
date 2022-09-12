@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     GameObject[] Divers;
 
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI heldText;
+    public TextMeshProUGUI livesText;
 
     public int totalPoints;
     public int storedPoints;
@@ -34,7 +36,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(Player == null)
+        livesText.text = "LIVES: " + lives.ToString();
+
+        if (Player == null)
         {
             Player = GameObject.FindGameObjectWithTag("Player");
         }
@@ -58,6 +62,8 @@ public class GameController : MonoBehaviour
     public void GetPoints(int points)
     {
         storedPoints += points;
+
+        heldText.text = "TRASH: " + storedPoints.ToString();
 
         if (activeDiver == null && Divers != null && Divers.Length > 0)
         {
@@ -86,7 +92,10 @@ public class GameController : MonoBehaviour
     {
         storedPoints = 0;
 
-        if(activeDiver != null)
+        if (heldText != null)
+            heldText.text = "TRASH: " + storedPoints.ToString();
+
+        if (activeDiver != null)
         {
             activeDiver.SetActive(false);
 
@@ -109,6 +118,8 @@ public class GameController : MonoBehaviour
         ResetStoredPoints();
 
         PlayerRespawn();
+
+        LoseLife();
     }
 
     public void PlayerRespawn()
@@ -131,7 +142,9 @@ public class GameController : MonoBehaviour
     {
         lives -= 1;
 
-        if(lives <= 0)
+        livesText.text = "LIVES: " + lives.ToString();
+
+        if (lives <= 0)
         {
             EndGame();
         }
