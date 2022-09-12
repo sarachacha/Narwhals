@@ -9,7 +9,7 @@ public class PointDropOff : MonoBehaviour
         if(collision.gameObject.tag.Equals("Player"))
         {
             GameController.instance.BankPoints();
-
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Player_Deliver");
             //Destroy(gameObject);
         }
     }

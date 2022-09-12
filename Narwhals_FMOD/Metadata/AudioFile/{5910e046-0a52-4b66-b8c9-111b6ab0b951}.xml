@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5910e046-0a52-4b66-b8c9-111b6ab0b951}">
+		<property name="assetPath">
+			<value>Player_RespawnTrashed_04.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.1939583333333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{916f4616-4ab8-4d45-b494-525f77e09dea}</destination>
+		</relationship>
+	</object>
+</objects>

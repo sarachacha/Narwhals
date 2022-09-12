@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{35df23c7-4600-4351-baf9-2ee4e42c2420}">
+		<property name="assetPath">
+			<value>Player_CollisionTrashed_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.81564583333333329</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{916f4616-4ab8-4d45-b494-525f77e09dea}</destination>
+		</relationship>
+	</object>
+</objects>
