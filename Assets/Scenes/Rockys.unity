@@ -276,6 +276,10 @@ MonoBehaviour:
   storedPoints: 0
   multiplier: 1
   lives: 3
+  GameOverScreen: {fileID: 0}
+  CollectableSpawner: {fileID: 0}
+  spawnersToDisable: []
+  uiToDisable: []
 --- !u!114 &66157889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41800,7 +41804,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1809343192}
   - component: {fileID: 1809343193}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62640,7 +62644,7 @@ GameObject:
   - component: {fileID: 3969710298847415628}
   - component: {fileID: 3969710298847415630}
   - component: {fileID: 3969710298847415625}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
