@@ -138,7 +138,7 @@ MonoBehaviour:
   - {fileID: 6234515895795085273}
   StringsBanks:
   - {fileID: 6193516927692657765}
-  cacheTime: 637986071690413965
+  cacheTime: 637986254989223712
   cacheVersion: 131591
 --- !u!114 &952262782455849414
 MonoBehaviour:
@@ -234,7 +234,7 @@ MonoBehaviour:
   Path: Narwhals_FMOD/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637986071690413965
+  lastModified: 637986254989223712
   FileSizes:
   - Name: Desktop
     Value: 355616
@@ -254,7 +254,7 @@ MonoBehaviour:
   Path: Narwhals_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637986071690394019
+  lastModified: 637986254989193803
   FileSizes:
   - Name: Desktop
     Value: 1188
@@ -274,7 +274,7 @@ MonoBehaviour:
   Path: Narwhals_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637986071690384046
+  lastModified: 637986254989193803
   FileSizes:
   - Name: Desktop
     Value: 267520
