@@ -20,6 +20,8 @@ public class CollectableSpawner : MonoBehaviour
 
     private float currentTimeToSpawn;
 
+    public bool canSpawn = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +53,7 @@ public class CollectableSpawner : MonoBehaviour
     public void SpawnObject()
     {
         int index = isRandomized ? Random.Range(0, collectablesToSpawn.Count) : 0;
-        if(collectablesToSpawn.Count > 0)
+        if(collectablesToSpawn.Count > 0 && canSpawn == true) 
         {
             GameObject clone = Instantiate(collectablesToSpawn[index], transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0), Quaternion.Euler(0, 0, Random.Range(0f, 360f)));
             //Destroy(clone, timeToDespawn);
