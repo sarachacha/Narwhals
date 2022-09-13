@@ -36,9 +36,6 @@ public class GameController : MonoBehaviour
     private int currentActiveIndex = 0;
     public List<TextMeshProUGUI> uiToDisable = new List<TextMeshProUGUI>();
 
-    public Camera cam1;
-    public Camera cam2;
-
     private void Awake()
     {
         instance = this;
@@ -47,9 +44,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam1.enabled = true;
-        cam2.enabled = false;
-
         livesText.text = "LIVES: " + lives.ToString();
 
         if (Player == null)
@@ -191,9 +185,6 @@ public class GameController : MonoBehaviour
         }
 
         CollectableSpawner.canSpawn = false;
-
-        cam1.enabled = false;
-        cam2.enabled = true;
 
         GameOverScreen.BankPoints(totalPoints);
     }
