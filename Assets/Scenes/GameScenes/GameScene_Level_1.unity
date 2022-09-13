@@ -57882,14 +57882,14 @@ MonoBehaviour:
       Data4: 1761721910
     Path: event:/Music/Music
   Event: 
-  PlayEvent: 1
-  StopEvent: 0
+  PlayEvent: 11
+  StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
   Params:
   - Name: Game Over
-    Value: 0
+    Value: 1
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
