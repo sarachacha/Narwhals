@@ -26,10 +26,15 @@ public class GameController : MonoBehaviour
     public int storedPoints;
     public int multiplier = 0;
 
-    public int lives = 1;
+    public int lives = 3;
 
     public GameOverScreen GameOverScreen;
-    
+    public CollectableSpawner CollectableSpawner;
+
+    [Header("Disable at EndGame")]
+    public List<GameObject> spawnersToDisable = new List<GameObject>();
+    private int currentActiveIndex = 0;
+    public List<TextMeshProUGUI> uiToDisable = new List<TextMeshProUGUI>();
 
     private void Awake()
     {
@@ -39,7 +44,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         livesText.text = "LIVES: " + lives.ToString();
 
         if (Player == null)
@@ -162,7 +166,26 @@ public class GameController : MonoBehaviour
 
     public void EndGame()
     {
-        GameOverScreen.BankPoints(totalPoints);
+        spawnersToDisable[currentActiveIndex].SetActive(false);
+        currentActiveIndex++;
+        if (currentActiveIndex >= spawnersToDisable.Count)
+        {
+            currentActiveIndex = 0;
+        }
+
+        foreach(var textMeshProUGUI in uiToDisable)
+        {
+            textMeshProUGUI.enabled = false;
+        }
         
+        currentActiveIndex++;
+        if (currentActiveIndex >= uiToDisable.Count)
+        {
+            currentActiveIndex = 0;
+        }
+
+        CollectableSpawner.canSpawn = false;
+
+        GameOverScreen.BankPoints(totalPoints);
     }
 }

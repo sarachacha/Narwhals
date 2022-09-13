@@ -181,10 +181,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         StopMoving();
         GameController.instance.PlayerDie();
+        animator.SetBool("die", false);
     }
 
     public void MoveInput(InputAction.CallbackContext context)
@@ -256,9 +257,15 @@ public class PlayerController : MonoBehaviour
         {
             if(collision.gameObject.layer != LayerMask.NameToLayer("Ground"))
             {
-                Die();
+                animator.SetBool("die", true);
+                Invoke("Die", 1f);
             }
         }
+
+    }
+
+    void game()
+    {
 
     }
 
