@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a0afc92d-8e0e-47df-b303-c355398a352e}">
+		<property name="assetPath">
+			<value>Diver_ExitTrashed_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.4984999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{916f4616-4ab8-4d45-b494-525f77e09dea}</destination>
+		</relationship>
+	</object>
+</objects>

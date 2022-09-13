@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{cdcfd6f8-9024-4f99-8acc-8397315b830f}">
+		<property name="assetPath">
+			<value>Player_DeathTrashed_02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.8534375000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{916f4616-4ab8-4d45-b494-525f77e09dea}</destination>
+		</relationship>
+	</object>
+</objects>
