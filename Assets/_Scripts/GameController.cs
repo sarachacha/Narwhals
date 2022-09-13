@@ -26,7 +26,10 @@ public class GameController : MonoBehaviour
     public int storedPoints;
     public int multiplier = 0;
 
-    public int lives = 3;
+    public int lives = 1;
+
+    public GameOverScreen GameOverScreen;
+    
 
     private void Awake()
     {
@@ -36,6 +39,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         livesText.text = "LIVES: " + lives.ToString();
 
         if (Player == null)
@@ -117,9 +121,13 @@ public class GameController : MonoBehaviour
 
         ResetStoredPoints();
 
-        PlayerRespawn();
-
         LoseLife();
+
+        if (lives > 0)
+        {
+            PlayerRespawn();
+        }
+        
     }
 
     public void PlayerRespawn()
@@ -148,12 +156,13 @@ public class GameController : MonoBehaviour
         {
             EndGame();
         }
-    }
 
-    
+
+    }
 
     public void EndGame()
     {
-
+        GameOverScreen.BankPoints(totalPoints);
+        
     }
 }
