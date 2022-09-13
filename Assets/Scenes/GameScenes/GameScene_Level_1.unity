@@ -2704,7 +2704,7 @@ MonoBehaviour:
   Preload: 0
   Params:
   - Name: Game Over
-    Value: 0
+    Value: 1
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
